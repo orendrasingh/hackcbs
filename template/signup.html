@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+{#    <link rel="stylesheet" href="{%static 'style.css' %}" type="text/CSS">#}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Mysiteschool</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Merriweather|Pacifico|Montez" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align:center;">Registration Form</h1>
+</div>
+
+
+<div class="container">
+    <div class="row">
+         <div class="col-sm-2">
+         </div>
+    <div class="col-sm-8">
+<form>
+     <div class="form-group">
+     <label >Name</label>
+     <p id="alertcpass" style="color:red; text-align:center;"></p>
+      <input type="text" class="form-control" id="txtConfirmPassword" />
+     </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"\required>
+  </div>
+    <div class="form-group">
+     <label >Confirm Password</label>
+     <p id="alertcpass" style="color:red; text-align:center;"></p>
+      <input type="password" class="form-control" id="txtConfirmPassword" \required/>
+     </div>
+
+     <div class="form-group">
+     <label >Address</label>
+     <p id="alertcpass" style="color:red; text-align:center;"></p>
+      <input type="text" class="form-control" />
+     </div>
+
+   <div class="form-group">
+     <label for="Adn">Aadhar no.</label>
+    <input type="text" name="adhar" class="form-control" id="Adn" maxlength="14" title="Enter Your Aadhar no" placeholder="Enter Your Aadhar no."  required/>
+   </div>
+    <div class="form-group">
+  <label>D.O.B</label>
+  <input type="date" class="form-control" name="dob" style="width:200px" \required/>
+    </div>
+    <div class="form-group">
+    <label >Gender </label>
+    <select name="Gender" class="form-control" style="width:200px; height: 20px;" \required>
+
+      <option value="" selected="selected" disabled="disabled">Gender</option>
+
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Third-gender">Third-gender</option>
+      </select>
+    </div>
+     <div class="form-group">
+      <label for="usrname">Username</label>
+    <input type="text" id="usrname" class="form-control" name="usrname" placeholder="Choose your username" \required>
+    <p id="alertusername" style="color:red; text-align:center;">{{ue}}</p>
+     </div>
+     <div class="form-group">
+     <label >Phone number</label>
+     <p id="alertcpass" style="color:red; text-align:center;"></p>
+      <input type="text" class="form-control" id="txtConfirmPassword" />
+     </div>
+
+     <div class="form-group">
+     <label >ALternate number</label>
+     <p id="alertcpass" style="color:red; text-align:center;"></p>
+      <input type="text" class="form-control" id="txtConfirmPassword" />
+     </div>
+
+
+     <div class="form-group">
+      <label>Upload Profile Pic:-</label>
+      <input type="file" name="myfile" class="form-control" accept="image/*" required/>
+     </div>
+
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1"\required>
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+    </div>
+         <div class="col-sm-4">
+         </div>
+    </div>
+
+</body>
+</html>

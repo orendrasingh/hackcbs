@@ -1,0 +1,167 @@
+
+<!doctype html>
+{%load static%}
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'log.css' %}" type="text/CSS">
+
+    </head>
+
+    <body class="container-fluid" >
+<!-- Image and text -->
+<div class="container">
+<img src="https://www.exudeinc.com/wp-content/uploads/2017/05/HealthFitness.png" class="img-fluid" style="height:30%;" alt="Responsive image">
+
+</div>
+
+<div class="alert alert-info">
+    <h1 style="text-align:center;"> <strong>Patient lifetime treatment record history.</strong></h1>
+</div>
+{#<div style="background-color:white;">#}
+<!--2nd container starts here -->
+{#<div class="row">#}
+{#  <div class="col-sm-4">.col-sm-4</div>#}
+{#  <div class="col-sm-4">.col-sm-4</div>#}
+{#  <div class="col-sm-4">.col-sm-4</div>#}
+{#</div>#}
+
+<div class="row">
+ <div class="col-sm-4">
+     <div class="row">
+<div class="container">
+{#    <img src="{{profile.url}}" class="rounded mx-auto d-block" alt="..."  style="height:100%;width:100%;">#}
+   <img src=" https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg"class="rounded mx-auto d-block" alt="..."  style="height:250px;width:250px;">
+    <h4 class="text-center text-danger" name="name">Name : Orendra singh</h4>
+    <h4 class="text-center text-primary" name="name">Aadhar no. : 834738483923293</h4>
+    <h4 class="text-center text-primary" name="name">Phone no. : 7503408348</h4>
+    <h4 class="text-center text-primary" name="name">Gender. : Male</h4>
+
+</div>
+
+ </div>
+ </div>
+<div class="col-sm-1"></div>
+<div class="col-sm-7">
+    <div class="row">
+
+    <table>
+  <tr>
+
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>Comments </td>
+    <td> : </td>
+  </tr>
+  <tr>
+
+    <td>Progress Notes </td>
+    <td> : </td>
+  </tr>
+  <tr>
+
+    <td>Date & Time </td>
+    <td> : </td>
+  </tr>
+  <tr>
+
+    <td>Vital Notes </td>
+    <td> : </td>
+  </tr>
+  <tr>
+    <td>Diagnoses </td>
+    <td> : </td>
+  </tr>
+        <tr>
+    <td>Immunization Dates </td>
+    <td> : </td>
+  </tr>
+        <tr>
+    <td> Doctor Name </td>
+    <td> : </td>
+  </tr>
+        <tr>
+    <td>Hospital Name </td>
+    <td> : </td>
+  </tr>
+        <tr>
+    <td>Address </td>
+    <td> : </td>
+  </tr>
+  <tr>
+    <td>  Mobile No</td>
+    <td>Italy</td>
+  </tr>
+        <tr>
+    <td>   Prescription</td>
+    <td>Italy</td>
+  </tr>
+        <tr>
+    <td>   Lab Tests</td>
+    <td>Italy</td>
+  </tr>
+        <tr>
+    <td>  Allergies</td>
+    <td>Italy</td>
+  </tr>
+
+</table>
+
+<div class="container">
+    <p class="border border-danger"></p>
+</div>
+
+<!--3rd container starts here -->
+<div class="container-fluid">
+<h4 class="text-center text-success">Here! is the List of your nicknames.</h4>
+
+    {%for items in listm%}
+            <div class="text-center alert alert-info">
+                <strong>{{items}}</strong>
+                </div>
+    {% endfor %}
+</div>
+<!--3rd container starts here -->
+
+<div class="container">
+    <p class="border border-danger"></p>
+</div>
+<div class="container-fluid">
+<h4 class="text-center text-success">Some Pictures of you.</h4>
+    <div class="row">
+     {%for ite in listim%}
+           <div class="col-xs-1"> <img src={{ite.url}} class="rounded mx-auto d-block" alt="..." style="height:160px;width:159px;border-style: solid;border-color: green;"> </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!--3rd container starts here -->
+
+<div class="container">
+<form action="/ind" name="admission" method="POST" enctype="multipart/form-data">{% csrf_token %}>
+  <div class="form-group">
+      <div class="alert alert-success">
+          <p class="text-center"><strong>{{success}}</strong></p>
+</div>
+       <input type="hidden" value="{{fname}}" name="name"/>
+       <p class="text-center text-danger"><strong>Kindly Write Some Words....</strong></p>
+
+       <textarea class="form-control" name="feed" rows="5" id="comment" placeholder="Write Anything"></textarea>
+  </div>
+
+    <p class="text-center"> <button type="submit" class="btn btn-primary">Submit </button> </p>
+</form>
+</div>
+
+{#</div>#}
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+</html>

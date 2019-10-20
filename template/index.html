@@ -1,0 +1,127 @@
+<!doctype html>
+{%load static%}
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'index.css' %}" type="text/CSS">
+    <style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+    </head>
+
+    <body class="container-fluid">
+<!-- Image and text -->
+<img src="https://www.exudeinc.com/wp-content/uploads/2017/05/HealthFitness.png" class="img-fluid" style="height:30%;" alt="Responsive image">
+<br>
+    <img src="{{im}}" style="height:100%;width:90%;" alt="">
+
+<div class="alert alert-danger">
+  <strong> <marquee >Track your health record and access it anywhere anytime.</marquee></strong>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-3">
+
+  </div>
+  <div class="col-sm-3">
+      <div class="alert alert-success">
+  <strong>Login Facility for Patient/Doctor </strong>
+</div>
+
+  </div>
+
+  <div class="col-sm-3">
+      <div class="alert alert-danger">
+  <strong> Don't registered yet? Register here!</strong>
+</div>
+
+  </div>
+    <div class="col-sm-3">
+
+  </div>
+</div>
+
+
+
+<div class="container">
+
+    <p class="border border-danger"></p>
+</div>
+<!--3rd container starts here -->
+<div class="container">
+<form action="." name="admission" method="POST" enctype="multipart/form-data">{% csrf_token %}
+  <div class="form-group">
+      <div class="alert alert-success">
+          <p class="text-center"><strong>{{success}}</strong></p>
+</div>
+       <p class="text-center text-danger"><strong>If you Don't Find Your Name Please Leave Reply!</strong></p>
+     <div class="row">
+{#         <div class="col-sm-3">#}
+{#         </div>#}
+    <div class="col-sm-6">
+         <label for="formGroupExampleInput">Username</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Name" name="name" required/>
+        <br>
+        <label for="formGroupExampleInput">Password</label>
+    <input type="text" class="form-control" type="password" id="formGroupExampleInput" placeholder="Enter Your Password" name="name" required/>
+  <br>
+        <button type="button" class="btn btn-danger">Login here</button>
+             <br>
+        <br>
+             <button type="button" class="btn btn-danger">Register here</button>
+         </div>
+         <div class="col-sm-6">
+
+                 <img src="https://patientengagementhit.com/images/site/article_headers/_normal/2017-12-12-patient-care.png" class="img-fluid">
+         </div>
+     </div>
+    </div>
+
+</form>
+
+<div class="alert alert-success">
+    <p style="text-align:center;color: red;font-weight: bold;" ><h1 style="text-align:center;">Emergency services</h1></p>
+</div>
+<br>
+    <p style="text-align:center" >Click the button to get your current location.</p>
+
+    <p style="text-align:center" ><button onclick="getLocation()"><img src="https://media1.giphy.com/media/57ZONYwnLOKVgLuApK/source.gif" width="100px" height="100px" class="img-fluid" alt="Locate me"></button></p>
+    <br>
+     <p style="text-align:center" id="locationresponse" ></p>
+<br>
+ <p style="text-align:center" ><button onclick="getLocation()">Get the list of hospital</button></p>
+<input type="hidden" id="maplocate" name="latii"/>
+<input type="hidden" id="maplocates" name="longi"/>
+
+<script>
+var x = document.getElementById("maplocate");
+var y = document.getElementById("maplocates");
+var z = document.getElementById("locationresponse");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML =position.coords.latitude;
+   y.innerHTML =position.coords.longitude;
+   z.innerHTML='Succesfully located You location';
+
+}
+</script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+</html>
